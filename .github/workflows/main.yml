@@ -27,4 +27,9 @@ jobs:
           REACT_APP_MAPBOX_API: ${{ secret.MAPBOX_API }}
       - name: Build the app
         run: npm run build
-        
+      - name: Deploy to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: $ {{ secrets.ACTION_DEPLOY_KEY }}
+          publish_dir: ./build
+      
