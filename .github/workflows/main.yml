@@ -24,7 +24,7 @@ jobs:
         uses: allenevans/set-env@v2.0.0
         with:
           GENERATE_SOURCEMAP: false
-          REACT_APP_MAPBOX_API: ${{ secret.MAPBOX_API }}
+          REACT_APP_MAPBOX_API: ${{ secrets.MAPBOX_API }}
       - name: Build the app
         run: npm run build
       - name: Deploy to github pages
